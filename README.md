@@ -148,21 +148,6 @@ The most frequently discussed topics include:
 
 ---
 
-## Repository Structure
-
-```text
-airbnb-victoria-customer-insights/
-│
-├── data/
-├── notebooks/
-├── images/
-├── report/
-├── README.md
-└── requirements.txt
-```
-
----
-
 ## Project Preview
 
 Screenshots of the analysis are available in the `images` folder.
