@@ -1,162 +1,156 @@
 # Airbnb Victoria Customer Experience Analytics
 
-Business Analytics | Natural Language Processing | Sentiment Analysis | Topic Modelling | Python
-
-This project analyses Airbnb guest reviews across Victoria, Australia to identify the factors influencing customer satisfaction and provide actionable recommendations for Airbnb hosts.
-
----
+Business Analytics | Natural Language Processing | Sentiment Analysis | Topic Modelling
 
 ## Project Overview
 
-Airbnb hosts receive thousands of customer reviews, making it difficult to identify recurring issues and understand what guests value most.
+This project analyses Airbnb guest reviews across Victoria, Australia to understand customer satisfaction and identify opportunities for improving host performance. Using Exploratory Data Analysis (EDA), VADER Sentiment Analysis, and Latent Dirichlet Allocation (LDA), the project transforms thousands of customer reviews into actionable business insights.
 
-This project applies Natural Language Processing (NLP), Sentiment Analysis, Topic Modelling, and Exploratory Data Analysis (EDA) to convert unstructured review data into business insights.
+The analysis focuses on three key business questions:
 
-The analysis addresses three business questions:
-
-* Which neighbourhoods achieve the highest guest satisfaction?
-* What causes negative guest experiences?
-* How do guest expectations differ across accommodation types?
+- Which neighbourhoods have the highest guest satisfaction?
+- What factors contribute to negative guest experiences?
+- How do guest expectations differ between accommodation types?
 
 ---
 
 ## Business Objectives
 
-* Analyse Airbnb listing distribution across Victoria.
-* Measure customer satisfaction using review sentiment.
-* Identify the primary causes of negative reviews.
-* Discover hidden discussion topics using LDA Topic Modelling.
-* Compare customer expectations across room types.
-* Develop business recommendations for Airbnb hosts.
+- Analyse Airbnb market activity across Victoria.
+- Measure guest satisfaction using sentiment analysis.
+- Identify the primary causes of negative customer experiences.
+- Discover common discussion topics from guest reviews using LDA.
+- Compare guest expectations between Entire Home/Apt and Private Room listings.
+- Develop practical recommendations for Airbnb hosts.
 
 ---
 
-## Dataset
+## Analytical Workflow
 
-| Dataset        | Description                                                                           |
-| -------------- | ------------------------------------------------------------------------------------- |
-| `listings.csv` | Airbnb listing information including neighbourhood, room type and property attributes |
-| `comments.csv` | Guest review data used for sentiment and topic analysis                               |
-
----
-
-## Technologies
-
-* Python
-* Pandas
-* NumPy
-* NLTK
-* VADER Sentiment Analysis
-* Scikit-learn
-* Latent Dirichlet Allocation (LDA)
-* Matplotlib
-* WordCloud
+1. Data Cleaning and Preprocessing
+2. Exploratory Data Analysis
+3. Sentiment Analysis using VADER
+4. Negative Review Analysis
+5. Topic Modelling using LDA
+6. Business Recommendations
 
 ---
 
-## Project Workflow
+# Question 1 – Market Performance
 
-```text
-Raw Data
-    │
-    ▼
-Data Cleaning
-    │
-    ▼
-Exploratory Data Analysis
-    │
-    ▼
-Sentiment Analysis
-    │
-    ▼
-Negative Review Analysis
-    │
-    ▼
-Topic Modelling
-    │
-    ▼
-Business Insights
-```
+The first analysis examines Airbnb listing distribution and guest satisfaction across the ten most active neighbourhoods in Victoria.
+
+![Figure 1](Figure%201%20%E2%80%93%20Number%20of%20Listings%20in%20top%2010%20neighbourhoods.png)
+
+*Figure 1. Number of Listings in Top 10 Neighbourhoods.*
+
+![Figure 2](Figure%202%20-%20Sentiment%20Score%20Distribution%20by%20Top%2010%20Neighbourhoods.png)
+
+*Figure 2. Sentiment Score Distribution by Top 10 Neighbourhoods.*
+
+![Figure 3](Figure%203%20%E2%80%93%20Average%20Guest%20Satisfaction%20Across%20Top%2010%20Neighbourhoods.png)
+
+*Figure 3. Average Guest Satisfaction Across Top 10 Neighbourhoods.*
+
+### Key Findings
+
+- Melbourne contains the largest concentration of Airbnb listings.
+- Yarra Ranges records the highest average guest satisfaction.
+- Higher listing volume does not necessarily correspond to higher customer satisfaction.
 
 ---
 
-## Key Findings
+# Question 2 – Understanding Customer Dissatisfaction
 
-### Market Performance
+Negative reviews were analysed using sentence-level sentiment analysis to identify the aspects most strongly associated with poor guest experiences.
 
-* Melbourne has the largest number of Airbnb listings.
-* Yarra Ranges records the highest average guest satisfaction.
-* High listing volume does not necessarily lead to higher customer satisfaction.
+![Figure 4](Figure%204%20%E2%80%93%20Comparing%20the%20count%20of%20Positive%20with%20Negative%20Reviews.png)
 
-### Customer Dissatisfaction
+*Figure 4. Positive vs Negative Reviews.*
 
-The most common sources of negative reviews are:
+![Figure 5](Figure%205%20%E2%80%93%20Average%20Sentiment%20by%20Negative%20Reviews.png)
 
-* Bathroom cleanliness
-* Host responsiveness
-* Property cleanliness
+*Figure 5. Average Sentiment by Aspect.*
 
-Structural listing characteristics such as price and minimum stay show only weak relationships with customer satisfaction.
+![Figure 6](Figure%206%20%E2%80%93%20Heatmap%20of%20Listing%20Features%20vs%20Sentiment.png)
 
-### Topic Modelling
+*Figure 6. Correlation Heatmap.*
 
-Topic modelling identified ten major themes discussed in customer reviews.
+### Key Findings
 
-The most frequently discussed topics include:
-
-* Accessibility and city exploration
-* Room quality
-* Helpful hosts
-* Overall stay experience
-
-### Room Type Comparison
-
-**Private Room**
-
-* Greater emphasis on host interaction
-* Higher expectations for hospitality
-* Strong focus on room quality
-
-**Entire Home**
-
-* Greater emphasis on privacy
-* Preference for convenient locations
-* Higher expectations for overall accommodation quality
+- Bathroom cleanliness is the strongest source of dissatisfaction.
+- Host responsiveness is another major contributor to negative experiences.
+- Structural listing attributes show only weak relationships with guest satisfaction, suggesting that service quality has a greater impact than listing characteristics.
 
 ---
 
-## Business Recommendations
+# Question 3 – Topic Modelling
 
-* Improve bathroom hygiene standards.
-* Enhance host communication and response time.
-* Provide accommodation-specific host training.
-* Highlight neighbourhood accessibility in listing descriptions.
-* Encourage guests to leave reviews after their stay.
+Latent Dirichlet Allocation (LDA) was applied to identify recurring themes discussed in Airbnb reviews.
+
+![Figure 7](Figure%207%20%E2%80%93%20Word%20clouds%20of%20Topic%20Popularity.png)
+
+*Figure 7. Word Clouds of Topic Popularity.*
+
+![Figure 8](Figure%208%20-%20Topic%20Popularity.png)
+
+*Figure 8. Topic Popularity.*
+
+![Figure 9](Figure%209%20%E2%80%93%20Topic%20Distributions%20by%20Room%20Type.png)
+
+*Figure 9. Topic Distributions by Room Type.*
+
+### Key Findings
+
+- Accessibility, room quality, and helpful hosts are the most frequently discussed topics.
+- Guests staying in Private Rooms place greater emphasis on host interaction and hospitality.
+- Guests booking Entire Home/Apt listings prioritise privacy, location, and overall accommodation quality.
+
+---
+
+# Business Recommendations
+
+Based on the analysis, several recommendations were developed for Airbnb hosts:
+
+- Improve bathroom hygiene and property maintenance.
+- Enhance host communication and response times.
+- Tailor host training according to accommodation type.
+- Highlight neighbourhood accessibility and nearby attractions in listing descriptions.
+- Encourage guests to leave post-stay reviews to improve platform credibility.
+
+---
+
+## Technologies Used
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- NLTK
+- VADER Sentiment Analysis
+- Latent Dirichlet Allocation (LDA)
+- WordCloud
+- Scikit-learn
 
 ---
 
 ## Skills Demonstrated
 
-* Data Cleaning
-* Exploratory Data Analysis
-* Natural Language Processing
-* Sentiment Analysis
-* Topic Modelling
-* Data Visualisation
-* Business Analytics
-* Business Recommendation Development
-
----
-
-## Project Preview
-
-Screenshots of the analysis are available in the `images` folder.
+- Data Cleaning
+- Exploratory Data Analysis
+- Natural Language Processing
+- Sentiment Analysis
+- Topic Modelling
+- Data Visualisation
+- Business Analytics
+- Data Storytelling
+- Business Recommendation Development
 
 ---
 
 ## Author
 
-Huong Linh Vu
+**Huong Linh Vu**
 
 Bachelor of Business Analytics
 
